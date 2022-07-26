@@ -3,23 +3,17 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <title>masukei`s website</title>
-        <h1>MASUKEI`s WEBSITE</h1>
+        <h1><a href="/">MASUKEI`s WEBSITE</h1>
     </header>
 
     <body>
-        <dev>
-            <p>好きな男性アイドル:<a href="https://www.sixtones.jp/">SixTONES</a></p>
-        </dev>
-
-        <dev>
-            <p>好きな女性アイドル:
-                <a href = "https://www.hinatazaka46.com/s/official/?ima=0000">日向坂46</a></p>
-        </dev>
-        
-        {{Post}}
-
-
-
+        {% for post in posts %}
+            <dev>
+                <p>published: {{ post.published_date }}</p>
+                <h2><a href="/">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr}}</p>            
+            </dev>
+        {% endfor %}
 
     </body>
 </html>
